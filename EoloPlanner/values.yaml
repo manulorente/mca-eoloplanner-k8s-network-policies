@@ -1,0 +1,49 @@
+networkPolicies:
+  deny-all: true
+  enabled: true
+  planner-rabbitmq: true
+  planner-weather: true
+  planner-topo: false
+  server-rabbitmq: true
+  server-mysql: true
+  topo-mongo: true
+
+ingress:
+  host: mastercloudapps
+  frontPath: /
+  topoPath: /toposervice
+
+mongodb:
+  image:
+    name: mongo
+    version: 5.0-focal
+
+mysql:
+  image:
+    name: mysql
+    version: 8.0
+
+rabbitmq:
+  image:
+    name: rabbitmq
+    version: 3.11-management
+
+toposervice:
+  image:
+    name: mastercloudapps/toposervice
+    version: v1.23
+
+weatherservice:
+  image:
+    name: mastercloudapps/weatherservice
+    version: v1.23
+
+server:
+  image:
+    name: mastercloudapps/server
+    version: v1.23
+
+planner:
+  image:
+    name: mastercloudapps/planner
+    version: v1.23
